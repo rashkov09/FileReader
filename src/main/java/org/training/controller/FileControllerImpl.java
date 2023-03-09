@@ -21,4 +21,19 @@ public class FileControllerImpl implements FileController {
     public void printFilteredFilesByName(String query) {
         System.out.println(fileService.filteredListByName(query));
     }
+
+    @Override
+    public void printFilteredLinesFromFile(Integer fileNumber, String query) {
+        System.out.println(fileService.searchInFileForLinesContaining(fileNumber, query));
+    }
+
+    @Override
+    public void printWholeFile(Integer fileNum) {
+        System.out.println(fileService.getAllLinesInFile(fileNum));
+    }
+
+    @Override
+    public Integer fileCount() {
+        return fileService.getFileCount();
+    }
 }
